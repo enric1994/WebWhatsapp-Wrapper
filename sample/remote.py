@@ -16,6 +16,8 @@ except KeyError:
 profiledir=os.path.join(".","firefox_cache")
 if not os.path.exists(profiledir): os.makedirs(profiledir)
 driver = WhatsAPIDriver(profile=profiledir, client='remote', command_executor=os.environ["SELENIUM"])
+time.sleep(2)
+driver.get_qr(filename='myQR.png')
 print("Waiting for QR")
 driver.wait_for_login()
 print("Saving session")
