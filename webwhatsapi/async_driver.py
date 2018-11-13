@@ -92,9 +92,9 @@ class WhatsAPIDriverAsync:
     async def get_chat_from_id(self, chat_id):
         return await self._run_async(self._driver.get_chat_from_id, chat_id)
 
-    async def get_chat_from_phone_number(self, number):
+    async def get_chat_from_phone_number(self, number, createIfNotFound = False):
         return await self._run_async(
-            self._driver.get_chat_from_phone_number, number)
+            self._driver.get_chat_from_phone_number, number, createIfNotFound)
 
     async def reload_qr(self):
         return await self._run_async(self._driver.reload_qr)
